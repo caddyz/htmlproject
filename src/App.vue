@@ -22,7 +22,7 @@
             <el-menu-item index="/Test">去哪儿</el-menu-item>
             <el-menu-item index="/test3">管理</el-menu-item>
             <el-button type="primary" @click="dialogFormVisible = true"><i class="iconfont icon-shezhi" style="color: #ACDA08"></i></el-button>
-            <el-dialog title="登陆" :visible.sync="dialogFormVisible" center  :before-close="BlogLoginClose"
+            <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"
                 width="30%">
               <el-form :model="form">
                 <el-form-item>

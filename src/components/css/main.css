@@ -1,0 +1,34 @@
+.notice{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+.authorAndTime{
+    display: flex;
+    justify-content: space-around;
+}
+.content,.func{
+    width: 50em;
+}
+.notice,.content,.func{
+    margin: 0 auto;
+}
+.title{
+    text-align: left;
+    text-indent: 1em;
+    color: deepskyblue;
+    font-size: 26px
+}
+.homeContent{
+    text-align: left;
+    text-indent: 2em;
+    height: 110px;
+}
+.func{
+    display: flex;
+    height: 20px;
+}
+.comment,.like{
+    width: 100%;
+    color: #D3D3D3;
+}

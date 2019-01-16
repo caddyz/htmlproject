@@ -1,0 +1,21 @@
+.el-container{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.el-main {
+    background-color: whitesmoke;
+    text-align: center;
+}
+.el-header, .el-footer {
+    background-color: #409EFF;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+}
+.el-header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+}

@@ -1,28 +1,23 @@
 <template>
     <div id="home">
-        <div class="notice">
-            <div style="color: crimson"><i class=" el-icon-bell"></i> 公告栏： </div>
-            <div style="width: 23px"></div>
-            <div style="width: 350px"><marquee>这是一条滚动播放的信息</marquee></div>
-        </div>
-        <div>
-            <div>题目</div>
-            <div class="authorAndTime">
-                <div>作者：</div>
-                <div>时间：</div>
-            </div>
-            <div>内容</div>
-        </div>
+        <blog-notice></blog-notice>
+        <div style="height: 1em"></div>
+        <article-info></article-info>
     </div>
 </template>
 
 <script>
+    import BlogNotice from "./homepage/BlogNotice";
+    import ArticleInfo from "./homepage/ArticleInfo";
 
+    export default {
+        components:{
+            ArticleInfo,
+            BlogNotice
+        }
+    }
 </script>
 
 <style scoped>
-.notice{
-    display: flex;
-    justify-content: center;
-}
+   @import "./css/main.css";
 </style>

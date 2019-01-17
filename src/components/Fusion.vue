@@ -1,5 +1,7 @@
 <template>
-    <article-detail></article-detail>
+    <div>
+        <article-detail></article-detail>
+    </div>
 </template>
 
 <script>
@@ -8,7 +10,7 @@
     export default {
         name: "Fusion",
         components: {
-            ArticleDetail
+            ArticleDetail,
         }
     }
 </script>

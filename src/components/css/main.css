@@ -1,4 +1,4 @@
-#home,.notice,.authorAndTime,.func{
+#home,.notice,.authorAndTime,.func,.artDetailInfo{
     display: flex;
 }
 #home{
@@ -66,4 +66,8 @@
     text-indent: 2em;
     text-align: left;
     font-size: 22px;
+}
+.artDetailInfo{
+    justify-content: space-around;
+    width: 100%;
 }

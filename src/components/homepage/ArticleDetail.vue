@@ -10,18 +10,23 @@
             <div style="height: 12px"></div>
             <div class="artDetailContent">{{content}}</div>
             <div style="height: 18px"></div>
-            <Label></Label>
+            <div class="artDetailInfo">
+                <Label></Label>
+                <collect-and-like></collect-and-like>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     import Label from "./Label";
+    import CollectAndLike from "./CollectAndLike";
 
     export default {
         name: "ArticleDetail",
         components:{
-            Label
+            Label,
+            CollectAndLike
         },
         data(){
             return {

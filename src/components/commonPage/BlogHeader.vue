@@ -1,12 +1,12 @@
 <template>
     <div class="BlogHeader">
-        <div style="color: #ACDA08">Kaiser's Blog</div>
+        <div style="color: #FFB5A1">Kaiser's Blog</div>
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
-                 router background-color="#409EFF" text-color="#ACDA08" active-text-color="#FFFF32">
-            <el-menu-item index="/Home">主页</el-menu-item>
-            <el-menu-item index="/Test">照片墙</el-menu-item>
-            <el-menu-item index="/test3">言语</el-menu-item>
-            <el-button type="primary" @click="dialogFormVisible = true"><i class="el-icon-setting" style="color: #ACDA08"></i></el-button>
+                 router background-color="#B8F4FF" text-color="#FFB5A1" active-text-color="#FFFF32">
+            <el-menu-item index="/home">主页</el-menu-item>
+            <el-menu-item index="/test">照片墙</el-menu-item>
+            <el-menu-item index="/fusion">时光轴</el-menu-item>
+            <el-button @click="dialogFormVisible = true"  class="log"><i class="el-icon-setting" style="color: #FFB5A1"></i></el-button>
             <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"
                        width="30%">
                 <el-form :model="form">
@@ -31,7 +31,7 @@
     export default {
         data() {
             return {
-                activeIndex: this.$router.path,
+                activeIndex: 'home',
                 dialogFormVisible: false,
                 form: {
                     name: '',
@@ -69,7 +69,11 @@
         flex-direction: row;
         justify-content: space-between;
     }
-    el-form-item{
+    el-input{
         text-align: center;
+    }
+    .log{
+        background-color: #B8F4FF;
+        border: none;
     }
 </style>

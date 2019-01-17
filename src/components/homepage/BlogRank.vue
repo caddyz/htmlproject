@@ -1,6 +1,6 @@
 <template>
     <el-table :data="rankData" stripe style="width: 100%">
-        <el-table-column prop="artTitle" :label="title" width="180"></el-table-column>
+        <el-table-column prop="artTitle" :label="title" align="center"></el-table-column>
         <el-table-column>
             <template slot-scope="scope">
                 <el-button @click="check(scope.row)" type="text" size="small">
@@ -14,7 +14,7 @@
 <script>
     export default {
         name: "BlogRank",
-        prop:['title'],
+        props:['title'],
         data(){
             return {
                 rankData:[

@@ -5,9 +5,11 @@
       </el-header>
       <el-main >
         <div style="height: 3em"></div>
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
+        <transition name="fade" mode="out-in" appear>
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </transition>
       </el-main>
       <el-footer>
         <blog-footer></blog-footer>

@@ -1,10 +1,20 @@
-.notice{
+#home,.notice,.authorAndTime,.func{
     display: flex;
+}
+#home{
+    flex-direction: row;
+}
+.rightDiv{
+    width: 30%;
+}
+.leftDiv{
+    width: 70%;
+}
+.notice{
     justify-content: center;
     width: 50%;
 }
 .authorAndTime{
-    display: flex;
     justify-content: space-around;
 }
 .content,.func{
@@ -16,7 +26,6 @@
 .title{
     text-align: left;
     text-indent: 1em;
-    color: deepskyblue;
     font-size: 26px
 }
 .homeContent{
@@ -28,7 +37,33 @@
     display: flex;
     height: 20px;
 }
+.comment,.like,.author,.time,.homeContent,.title{
+    font-family: "仿宋";
+    color: #4cb4e7;
+}
 .comment,.like{
     width: 100%;
-    color: #D3D3D3;
+}
+.author,.time{
+    font-size: 18px;
+}
+#artDetail{
+    width: 85%;
+    background-color: white;
+    margin: 0 auto;
+}
+.artDetailAuthor,.artDetailTime,.artDetailTitle,.artDetailContent{
+    color: #FFB5A1;
+    font-family: "仿宋";
+}
+.artDetailAuthor,.artDetailTime{
+    font-style: italic;
+}
+.artDetailTitle{
+    font-size: 38px;
+}
+.artDetailContent{
+    text-indent: 2em;
+    text-align: left;
+    font-size: 22px;
 }

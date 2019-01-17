@@ -4,11 +4,11 @@
     min-height: 100vh;
 }
 .el-main {
-    background-color: whitesmoke;
     text-align: center;
+    background-color: whitesmoke;
 }
 .el-header, .el-footer {
-    background-color: #409EFF;
+    background-color:  #B8F4FF;
     color: #333;
     text-align: center;
     line-height: 60px;

@@ -1,12 +1,12 @@
 <template>
     <div>
-        Copyright © 2019 Kaiser. All rights reserved.
+        <el-button></el-button>
     </div>
 </template>
 
 <script>
     export default {
-
+        name: "CollectAndLike"
     }
 </script>
 

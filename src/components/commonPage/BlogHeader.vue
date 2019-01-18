@@ -4,7 +4,8 @@
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
                  router background-color="#B8F4FF" text-color="#FFB5A1" active-text-color="#FFFF32">
             <el-menu-item index="/home">主页</el-menu-item>
-            <el-menu-item index="/test">照片墙</el-menu-item>
+            <el-menu-item index="/photo">照片墙</el-menu-item>
+            <el-menu-item index="/write">写文章</el-menu-item>
             <el-menu-item index="/fusion">时光轴</el-menu-item>
             <el-button @click="dialogFormVisible = true"  class="log"><i class="el-icon-setting" style="color: #FFB5A1"></i></el-button>
             <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"

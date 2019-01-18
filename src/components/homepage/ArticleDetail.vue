@@ -14,6 +14,12 @@
                 <Label></Label>
                 <collect-and-like></collect-and-like>
             </div>
+            <div style="height: 48px"></div>
+        </div>
+        <div class="mesg">
+            <message-board></message-board>
+            <div style="height: 1em"></div>
+            <guest-book-page></guest-book-page>
         </div>
     </div>
 </template>
@@ -21,12 +27,16 @@
 <script>
     import Label from "./Label";
     import CollectAndLike from "./CollectAndLike";
+    import MessageBoard from "~/components/homepage/MessageBoard";
+    import GuestBookPage from "~/components/homepage/GuestBookPage";
 
     export default {
         name: "ArticleDetail",
         components:{
             Label,
-            CollectAndLike
+            CollectAndLike,
+            MessageBoard,
+            GuestBookPage
         },
         data(){
             return {

@@ -47,7 +47,7 @@
 .author,.time{
     font-size: 18px;
 }
-#artDetail{
+#artDetail,.mesg{
     width: 85%;
     background-color: white;
     margin: 0 auto;
@@ -70,4 +70,12 @@
 .artDetailInfo{
     justify-content: space-around;
     width: 100%;
+}
+.msgTitle,.msgBoardInput{
+    width: 80%;
+    margin: 0 auto;
+}
+.msgTitle{
+    font-family: "仿宋";
+    text-align: left;
 }

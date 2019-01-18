@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-ui": "^2.3.4",
+    "mavon-editor": "^2.6.17",
     "vue": "^2.5.16",
     "vue-router": "^3.0.2"
   },

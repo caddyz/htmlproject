@@ -1,21 +1,27 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import Test from './components/Test.vue'
+import PhotoWall from './components/PhotoWall.vue'
 import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import Fusion from './components/Fusion.vue'
+import WriteArticle from './components/WriteArticle.vue'
+
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
+Vue.use(mavonEditor)
 
 const routes = [
-  {path:"/test",component:Test},
+  {path:"/photo",component:PhotoWall},
   {path:"/home",component:Home},
   {path:"/register",component:Register},
   {path:"/fusion",component:Fusion},
+  {path:"/write",component:WriteArticle},
 ]
 
 const router = new VueRouter({

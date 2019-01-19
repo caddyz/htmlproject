@@ -79,3 +79,7 @@
     font-family: "仿宋";
     text-align: left;
 }
+#photo{
+    height: 58rem;
+    background-image: url("../../assets/view.jpg");
+}

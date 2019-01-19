@@ -89,6 +89,7 @@
         methods:{
             artCheck:function (art) {
                 alert(art.articleId)
+                this.$router.push({path:'article'})
             }
         }
     }

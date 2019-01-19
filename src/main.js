@@ -10,6 +10,7 @@ import Home from './components/Home.vue'
 import Register from './components/Register.vue'
 import Fusion from './components/Fusion.vue'
 import WriteArticle from './components/WriteArticle.vue'
+import ArticleDetail from "./components/homepage/ArticleDetail.vue";
 
 
 Vue.use(ElementUI)
@@ -22,6 +23,7 @@ const routes = [
   {path:"/register",component:Register},
   {path:"/fusion",component:Fusion},
   {path:"/write",component:WriteArticle},
+  {path:"/article",component:ArticleDetail},
 ]
 
 const router = new VueRouter({

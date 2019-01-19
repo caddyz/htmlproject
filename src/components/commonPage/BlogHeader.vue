@@ -8,23 +8,22 @@
             <el-menu-item index="/write">写文章</el-menu-item>
             <el-menu-item index="/fusion">时光轴</el-menu-item>
             <el-button @click="dialogFormVisible = true"  class="log"><i class="el-icon-setting" style="color: #FFB5A1"></i></el-button>
-            <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"
-                       width="30%">
-                <el-form :model="form">
-                    <el-form-item>
-                        <el-input v-model="form.name" placeholder="用户名" style="width: 80%"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-input v-model="form.password" type="password" placeholder="密码" style="width: 80%"></el-input>
-                    </el-form-item>
-                    <div style="text-align: center"></div>
-                </el-form>
-                <div slot="footer" class="dialog-footer">
-                    <el-button @click="BlogRegister">注 册</el-button>
-                    <el-button type="primary" @click="BlogLogin">登 录</el-button>
-                </div>
-            </el-dialog>
         </el-menu>
+        <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"
+                   width="30%">
+            <el-form :model="form">
+                <el-form-item label="用户名" :label-width="formLabelWidth">
+                    <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="密码" :label-width="formLabelWidth">
+                    <el-input v-model="form.password" type="password" autocomplete="off"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="BlogRegister">注 册</el-button>
+                <el-button type="primary" @click="BlogLogin">登 录</el-button>
+            </div>
+        </el-dialog>
     </div>
 </template>
 
@@ -37,6 +36,12 @@
                 form: {
                     name: '',
                     password: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
                 },
                 formLabelWidth: '80px'
             };

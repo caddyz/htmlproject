@@ -55,6 +55,7 @@ module.exports = (options = {}) => ({
     extensions: ['.js', '.vue', '.json', '.css']
   },
   devServer: {
+    disableHostCheck: true,
     host: '127.0.0.1',
     port: 8010,
     proxy: {
@@ -70,5 +71,5 @@ module.exports = (options = {}) => ({
       index: url.parse(options.dev ? '/assets/' : publicPath).pathname
     }
   },
-  devtool: options.dev ? '#eval-source-map' : '#source-map'
+  devtool: options.dev ? '#eval-source-map' : '#source-map',
 })

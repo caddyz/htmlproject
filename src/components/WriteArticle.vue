@@ -2,7 +2,9 @@
     <div>
         <el-input v-model="title" placeholder="文章标题"></el-input>
         <div style="height: 10px"></div>
-        <mavon-editor v-model="artContent"/>
+        <div>
+            <mavon-editor v-model="artContent"/>
+        </div>
         <div style="height: 10px"></div>
         <div>分类选择：</div>
         <el-checkbox-group v-model="artLab" :min="1" :max="4">

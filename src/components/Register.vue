@@ -2,7 +2,7 @@
     <div id="RegisterCss">
         <div style="height: 5rem"></div>
         <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-            <el-form-item label="用户名" prop="name">
+            <el-form-item label="用户名" prop="name" >
                 <el-input v-model="ruleForm2.name"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="pass" required>
@@ -34,8 +34,22 @@
 
 <script>
     import options from '../js/country-data.js'
+    import blogApi from '../api/blogapi';
     export default {
         data() {
+            var checkUserName = (rule,value,callback) =>{
+                blogApi.checkUserName(value).then(response => {
+                    if(response.data.succ === true){
+                        console.log(response.data);
+                        callback(new Error("用户名已存在"))
+                    }else{
+                        console.log(response.data);
+                        callback()
+                    }
+                }).catch(error => {
+                    console.log(error)
+                })
+            };
             var checkPhone = (rule, value, callback) => {
                 if (!value) {
                     return callback(new Error('手机不能为空'));
@@ -81,7 +95,7 @@
                     pass: '',
                     checkPass: '',
                     phone: '',
-                    address: []
+                    address: [],
                 },
                 rules2: {
                     email:[
@@ -90,7 +104,8 @@
                     ],
                     name: [
                         { required: true, message: '请输入用户名', trigger: 'blur' },
-                        { min: 3, message: '长度在 3 字符以上', trigger: 'blur' }
+                        { min: 2, message: '长度在 2 字符以上', trigger: 'blur' },
+                        { validator: checkUserName,trigger:'blur'}
                     ],
                     pass: [
                         { validator: validatePass, trigger: 'blur' }
@@ -108,8 +123,14 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert('submit!');
-                        alert("地址："+this.ruleForm2.address)
+                        blogApi.registerBlog(this.ruleForm2).then(res => {
+                            if(res.data.succ){
+                                this.$message({message: "注册成功", type: "success"});
+                                setTimeout(this.$router.push({path: "/"}),5000)
+                            }else {
+                                this.$message({message:"注册失败",type:"warning"})
+                            }
+                        })
                     } else {
                         console.log('error submit!!');
                         return false;

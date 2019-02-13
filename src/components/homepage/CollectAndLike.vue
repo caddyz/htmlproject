@@ -10,6 +10,7 @@
         name: "CollectAndLike",
         data(){
             return {
+
                 isLike:false,
                 isCollect:false,
                 blogHandleClick:{

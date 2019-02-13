@@ -7,7 +7,7 @@
         <div style="height: 3em"></div>
         <transition name="fade" mode="out-in" appear>
           <keep-alive>
-            <router-view></router-view>
+            <router-view/>
           </keep-alive>
         </transition>
       </el-main>

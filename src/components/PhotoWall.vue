@@ -3,7 +3,7 @@
         <div class="photoTop">
             <div class="demo-wrap" >
                 <div class="photos" id="photos" ref="photos">
-                    <div class="photo" ref="photo" v-for="img of imgArr" >
+                    <div class="photo" ref="photo" v-for="img of imgArr" @click="pthtoClick(img)">
                         <img :src="img" />
                     </div>
                 </div>
@@ -16,7 +16,7 @@
         </div>
         <div class="photoDemo">
             <div class="photo-box">
-                <div style="width: 20%;height: 220px" v-for="i of 17">
+                <div style="width: 20%;height: 220px" v-for="i of 17" >
                         <div class="img1" :style="{height:((Math.floor(Math.random()*6)+5)*10)+'%',width:(((Math.floor(Math.random()*6)+4)*10)+5)+'%'}">
                             <img :src="img1" />
                         </div>
@@ -56,7 +56,10 @@
                     deg += deg2;
                     this.$refs.photos.style.webkitTransform = "rotateY(" + deg + "deg)";
                 },2000)
-            }
+            },
+            pthtoClick(img){
+
+            },
         },
 
     };
@@ -65,14 +68,16 @@
 <style scoped>
     @import "./css/main.css";
     @import "./css/photoWall.css";
-
-    .photoTop{
+    .imgUpload,.photoTop{
         display: flex;
-        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .imgUpload{
+        flex-direction: column;
     }
     .photo-box{
         width: 100%;
-        /*height: 100%;*/
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

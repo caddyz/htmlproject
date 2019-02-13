@@ -7,7 +7,7 @@
                     <div class="author">作者：<span >{{art.author}}</span></div>
                     <div class="time">时间：<span >{{art.time}}</span></div>
                 </div>
-                <div class="homeContent">{{art.content}}</div>
+                <div class="homeContent">{{art.content}}......</div>
             </div>
             <div style="height: 4px"></div>
             <div class="func">
@@ -27,7 +27,6 @@
             return {
                 readingQuantity:"193",
                 fans:"98",
-                artId:"",
                 form:[{
                     articleId:"1",
                     title:"这是一个简单的测试",
@@ -88,7 +87,7 @@
         },
         methods:{
             artCheck:function (art) {
-                alert(art.articleId)
+                alert(art.articleId);
                 this.$router.push({path:'article'})
             }
         }

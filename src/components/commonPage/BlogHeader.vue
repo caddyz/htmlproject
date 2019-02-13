@@ -3,11 +3,17 @@
         <div style="color: #FFB5A1">Kaiser's Blog</div>
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
                  router background-color="#B8F4FF" text-color="#FFB5A1" active-text-color="#FFFF32">
-            <el-menu-item index="/home">主页</el-menu-item>
-            <el-menu-item index="/photo">照片墙</el-menu-item>
-            <el-menu-item index="/write">写文章</el-menu-item>
+            <el-menu-item index="/">主页</el-menu-item>
+            <el-menu-item v-if="userController" index="/photo">照片墙</el-menu-item>
+            <el-menu-item v-if="userController" index="/write">写文章</el-menu-item>
             <el-menu-item index="/fusion">时光轴</el-menu-item>
-            <el-button @click="dialogFormVisible = true"  class="log"><i class="el-icon-setting" style="color: #FFB5A1"></i></el-button>
+            <!--<el-menu-item index="/404">404</el-menu-item>-->
+            <el-button v-if="!userController" @click="dialogFormVisible = true"  class="log"><i class="el-icon-setting" style="color: #FFB5A1"></i></el-button>
+            <el-submenu v-if="userController">
+                <template slot="title"><i class=" el-icon-more"></i></template>
+                <el-menu-item index="/write">写文章</el-menu-item>
+                <el-menu-item @click="Logout" index="">退出</el-menu-item>
+            </el-submenu>
         </el-menu>
         <el-dialog title="登陆" :visible.sync="dialogFormVisible"  center  :before-close="BlogLoginClose"
                    width="30%">
@@ -28,20 +34,16 @@
 </template>
 
 <script>
+    import blogApi from '../../api/blogapi';
     export default {
         data() {
             return {
-                activeIndex: 'home',
+                userController: false,
+                activeIndex: '/',
                 dialogFormVisible: false,
                 form: {
                     name: '',
                     password: '',
-                    date1: '',
-                    date2: '',
-                    delivery: false,
-                    type: [],
-                    resource: '',
-                    desc: ''
                 },
                 formLabelWidth: '80px'
             };
@@ -49,7 +51,7 @@
         methods:{
             //注册路由
             BlogRegister(){
-                this.dialogFormVisible = false
+                this.dialogFormVisible = false;
                 this.$router.push({path:"register"})
             },
             //登录关闭
@@ -62,8 +64,19 @@
             },
             //登录
             BlogLogin(){
-                this.dialogFormVisible = false
-                console.log("名字："+this.form.name+" ； "+"密码："+this.form.password)
+                this.dialogFormVisible = false;
+                blogApi.userLogin(this.form).then(res=>{
+                    if (res.data.succ){
+                        this.$message({message: "登陆成功", type: "success"});
+                        this.userController = true
+                    } else {
+                        this.$message({message:"登陆失败",type:"warning"})
+                    }
+                })
+            },
+            //登出
+            Logout(){
+                this.userController = false
             }
         }
     }
